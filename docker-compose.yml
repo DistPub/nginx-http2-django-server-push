@@ -1,0 +1,13 @@
+demo:
+    build: .
+    container_name: demo
+
+nginx:
+    build: ./dockerfile/nginx
+    container_name: demo_nginx
+    volumes:
+      - ./dockerfile/nginx/conf/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 443:443
+    links:
+      - demo
