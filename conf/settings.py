@@ -33,12 +33,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
+    # 'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'applications.demo',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -50,6 +51,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'applications.demo.middlewares.AddLinkHeaderMiddleware',
 )
 
 ROOT_URLCONF = 'conf.urls'
@@ -104,3 +106,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = str(BASE_DIR_PATH / 'static')
 STATICFILES_DIRS = [str(BASE_DIR_PATH / "applications/demo/static")]
+
+ENABLE_SERVER_PUSH = True
