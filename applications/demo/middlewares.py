@@ -21,5 +21,7 @@ class AddLinkHeaderMiddleware(object):
                     href = re.search(r'href=[\'"](.+?)[\'"]', link[0]).group(1)
                 as_value = re.search(r'as=[\'"](.+?)[\'"]', link[0]).group(1)
                 link_headers.append('<{}>; as={}; rel=preload'.format(href, as_value))
-        response['Link'] = ','.join(link_headers)
+
+        if link_headers:
+            response['Link'] = ','.join(link_headers)
         return response
