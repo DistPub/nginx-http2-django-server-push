@@ -4,10 +4,10 @@
 <head>
 <title>demo</title>
 <meta charset="UTF-8" />
-<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
-<link href="{% static 'styles/index.css' %}" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon preload" href="{% static 'images/favicon.ico' %}" as="image">
+<link href="{% static 'styles/index.css' %}" rel="stylesheet preload" type="text/css" as="style"/>
 </head>
 <body>
-    <img src="{% static 'images/logo.png' %}">
+    <img src="{% static 'images/logo.png' %}" rel="preload" as="image">
 </body>
 </html>
