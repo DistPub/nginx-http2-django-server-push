@@ -2,6 +2,8 @@
 
 demo for integration nginx http2 server push feature with django
 
+![demo](https://user-images.githubusercontent.com/2248369/36716748-5d1aca3c-1bd6-11e8-945e-05944576a250.png)
+
 ### How to use
 
 > docker-compose up
